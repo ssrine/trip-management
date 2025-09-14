@@ -105,7 +105,6 @@ The Trip Management App is designed to help trucking companies manage their trip
 
 ## Screenshots
 
-*Add screenshots of your app here to show the interface for both Manager and Driver.*
 ![alt text](image.png)
 ![alt text](image-1.png)
 ![alt text](image-2.png)
@@ -117,7 +116,3 @@ The Trip Management App is designed to help trucking companies manage their trip
 - Backend API live link: []
 
 ---
-
-## License
-
-This project is licensed under the MIT License.
