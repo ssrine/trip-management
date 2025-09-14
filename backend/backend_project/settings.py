@@ -94,6 +94,7 @@ DATABASES = {
 }
 
 ALLOWED_HOSTS = [
+    "trip-management-production.up.railway.app",
     "trip-management.railway.app",
     "localhost",
     "127.0.0.1",
