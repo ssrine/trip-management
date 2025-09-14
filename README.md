@@ -112,7 +112,7 @@ The Trip Management App is designed to help trucking companies manage their trip
 
 ## Live Demo
 
-- Frontend live link: []
-- Backend API live link: []
+- Frontend live link: [https://trip-management-rho.vercel.app/](https://trip-management-rho.vercel.app/)
+- Backend API live link: [https://trip-management-production.up.railway.app/api/trips/](https://trip-management-production.up.railway.app/api/trips/)
 
 ---
