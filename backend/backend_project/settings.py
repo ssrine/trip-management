@@ -43,7 +43,9 @@ INSTALLED_APPS = [
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True  
-
+CORS_ALLOWED_ORIGINS = [
+    "https://trip-management-rho.vercel.app",
+]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
