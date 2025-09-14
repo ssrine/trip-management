@@ -23,7 +23,6 @@ const Dashboard = ({ activeTab, tripData, logsheetsData, entriesData }) => {
 
   return (
     <div className="mt-6 p-4 md:p-6 border border-blue-200 rounded-xl bg-gradient-to-br from-blue-50 to-white shadow-lg animate-fadeIn">
-      {/* Header */}
       <div className="flex items-center mb-5 pb-3 border-b border-blue-200">
         <div className="w-10 h-10 bg-gradient-to-r from-amber-400 to-amber-600 rounded-lg flex items-center justify-center mr-3 shadow-md">
           <FontAwesomeIcon icon={faTachometerAlt} className="text-white text-lg" />
@@ -36,7 +35,6 @@ const Dashboard = ({ activeTab, tripData, logsheetsData, entriesData }) => {
         </div>
       </div>
       
-      {/* Stats Summary */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-5">
         <div className="bg-white p-3 rounded-lg shadow border border-blue-100 transition-all duration-300 hover:shadow-lg">
           <div className="flex items-center mb-2">
@@ -79,7 +77,6 @@ const Dashboard = ({ activeTab, tripData, logsheetsData, entriesData }) => {
         </div>
       </div>
       
-      {/* Trip Information */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 mb-5">
         <div className="bg-white p-4 rounded-lg shadow border border-blue-100 transition-all duration-300 hover:shadow-lg">
           <h4 className="font-bold mb-3 text-blue-800 flex items-center text-sm md:text-base">
@@ -107,7 +104,6 @@ const Dashboard = ({ activeTab, tripData, logsheetsData, entriesData }) => {
         </div>
       </div>
       
-      {/* Logsheets Summary */}
       <div className="mb-5">
         <h4 className="font-bold mb-3 text-blue-800 flex items-center text-sm md:text-base">
           <FontAwesomeIcon icon={faFileAlt} className="mr-2 text-amber-600" />
@@ -149,7 +145,6 @@ const Dashboard = ({ activeTab, tripData, logsheetsData, entriesData }) => {
         )}
       </div>
       
-      {/* Recent Entries */}
       <div>
         <h4 className="font-bold mb-3 text-blue-800 flex items-center text-sm md:text-base">
           <FontAwesomeIcon icon={faList} className="mr-2 text-amber-600" />

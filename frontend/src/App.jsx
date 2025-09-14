@@ -9,7 +9,7 @@ import LogsheetDetails from "./pages/LogsheetDetails";
 import NotFound from "./pages/NotFound";
 
 // Driver Pages (POST forms)
-import CreateTrip from "./pages/CreateTrip/CreateTrip"; // Updated import path
+import CreateTrip from "./pages/CreateTrip/CreateTrip";
 import CreateLogsheet from "./pages/CreateLogsheet";
 import CreateEntry from "./pages/CreateEntry";
 

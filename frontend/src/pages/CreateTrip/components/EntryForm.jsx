@@ -16,7 +16,6 @@ const EntryForm = ({ activeTab, logsheetsData, newEntryData, handleEntryChange, 
 
   return (
     <div className="mb-6 p-4 md:p-6 border border-blue-200 rounded-xl bg-gradient-to-br from-blue-50 to-white shadow-lg animate-fadeIn">
-      {/* Header with gold accent */}
       <div className="flex items-center mb-4 pb-3 border-b border-blue-200">
         <div className="w-10 h-10 bg-gradient-to-r from-amber-400 to-amber-600 rounded-lg flex items-center justify-center mr-3 shadow-md">
           <FontAwesomeIcon icon={faFileAlt} className="text-white text-lg" />
@@ -29,7 +28,6 @@ const EntryForm = ({ activeTab, logsheetsData, newEntryData, handleEntryChange, 
         </div>
       </div>
       
-      {/* Logsheet Selection */}
       <div className="mb-4">
         <label className="block text-xs font-semibold text-blue-800 mb-2 uppercase tracking-wide flex items-center">
           <FontAwesomeIcon icon={faList} className="mr-2 text-amber-600 text-xs" />
@@ -51,7 +49,6 @@ const EntryForm = ({ activeTab, logsheetsData, newEntryData, handleEntryChange, 
         </div>
       </div>
       
-      {/* Form Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 mb-5">
         <div className="col-span-1 transform transition-all duration-300 hover:scale-[1.02]">
           <label className="block text-xs font-semibold text-blue-800 mb-2 uppercase tracking-wide flex items-center">
@@ -122,14 +119,12 @@ const EntryForm = ({ activeTab, logsheetsData, newEntryData, handleEntryChange, 
         </div>
       </div>
       
-      {/* Submit Button */}
       <div className="flex justify-center">
         <button 
           onClick={() => submitEntry(newEntryData.logsheet)} 
           disabled={isLoading || !newEntryData.logsheet}
           className="relative bg-gradient-to-r from-blue-600 to-blue-800 text-white py-3 px-8 rounded-xl hover:from-blue-700 hover:to-blue-900 disabled:from-blue-300 disabled:to-blue-400 flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 disabled:transform-none group w-full md:w-auto"
         >
-          {/* Gold shimmer effect */}
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-100/20 to-transparent -skew-x-12 animate-shimmer group-hover:animate-shimmerFast"></div>
           
           {isLoading ? (

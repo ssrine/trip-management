@@ -25,7 +25,6 @@ export default function Dashboard() {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
 
-  // Fetch trips from backend
   useEffect(() => {
     const fetchTrips = async () => {
       try {
@@ -40,7 +39,6 @@ export default function Dashboard() {
     fetchTrips();
   }, []);
 
-  // Calculate stats
   const totalTrips = trips.length;
   const totalLogsheets = trips.reduce(
     (acc, trip) => acc + (trip.logsheets ? trip.logsheets.length : 0),
@@ -56,7 +54,6 @@ export default function Dashboard() {
     0
   );
 
-  // Handle sorting
   const handleSort = (key) => {
     let direction = 'ascending';
     if (sortConfig.key === key && sortConfig.direction === 'ascending') {
@@ -65,7 +62,6 @@ export default function Dashboard() {
     setSortConfig({ key, direction });
   };
 
-  // Sort trips
   const sortedTrips = React.useMemo(() => {
     let sortableItems = [...trips];
     if (sortConfig.key !== null) {
@@ -82,7 +78,6 @@ export default function Dashboard() {
     return sortableItems;
   }, [trips, sortConfig]);
 
-  // Filter trips based on search and active tab
   const filteredTrips = sortedTrips.filter(trip => {
     const matchesSearch = 
       (trip.pickup_location || '').toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -95,16 +90,13 @@ export default function Dashboard() {
     return matchesSearch;
   });
 
-  // Get current trips for pagination
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentTrips = filteredTrips.slice(indexOfFirstItem, indexOfLastItem);
   const totalPages = Math.ceil(filteredTrips.length / itemsPerPage);
 
-  // Change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-  // Format table header with sort indicator
   const renderSortableHeader = (key, label) => {
     return (
       <th 
@@ -127,7 +119,6 @@ export default function Dashboard() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header Section with Image */}
       <div 
         className="relative h-48 md:h-64 bg-blue-900 overflow-hidden"
         style={{
@@ -136,7 +127,6 @@ export default function Dashboard() {
           backgroundPosition: 'center'
         }}
       >
-        {/* Animated elements */}
         <div className="absolute inset-0">
           {[...Array(5)].map((_, i) => (
             <div 
@@ -171,13 +161,10 @@ export default function Dashboard() {
           </div>
         </div>
 
-        {/* Decorative gold bar */}
         <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-amber-400 to-amber-600"></div>
       </div>
 
-      {/* Main Content */}
       <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 py-6 md:py-8 -mt-12 md:-mt-16 relative z-20">
-        {/* Quick Stats */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-6 md:mb-8">
           <div className="bg-white rounded-xl shadow-lg p-4 md:p-6 border border-gray-100 transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl group relative overflow-hidden">
             <div className="absolute -right-4 -top-4 w-20 h-20 md:w-24 md:h-24 bg-amber-500/10 rounded-full"></div>
@@ -231,7 +218,6 @@ export default function Dashboard() {
           </div>
         </div>
 
-        {/* Dashboard Content */}
         <div className="bg-white rounded-xl shadow-lg p-4 md:p-6 border border-gray-100 overflow-hidden mb-6 md:mb-8">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 md:mb-6 gap-3 md:gap-4">
             <h2 className="text-xl md:text-2xl font-bold text-gray-800">Trip Management</h2>
@@ -419,7 +405,6 @@ export default function Dashboard() {
         </div>
       </div>
 
-      {/* Add custom animations to tailwind config */}
       <style>
         {`
           @keyframes float {

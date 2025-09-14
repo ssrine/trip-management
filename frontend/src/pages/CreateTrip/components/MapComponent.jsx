@@ -23,7 +23,6 @@ const MapComponent = ({ activeTab, formData, updateMap, mapRef }) => {
 
   if (activeTab !== "trip") return null;
 
-  // Mock data for demonstration
   const routeDetails = {
     distance: "15.2 miles",
     duration: "32 minutes",
@@ -47,9 +46,7 @@ const MapComponent = ({ activeTab, formData, updateMap, mapRef }) => {
       
       <div id="map" style={{ height: "250px", width: "100%", borderRadius: "8px" }}></div>
       
-      {/* Collapsible details for mobile */}
       <div className={`mt-3 ${isExpanded ? 'block' : 'hidden'} md:block`}>
-        {/* Route summary bar - always visible on mobile */}
         <div className="flex justify-between bg-blue-50 p-2 rounded-lg mb-2 md:hidden">
           <div className="flex items-center">
             <FontAwesomeIcon icon={faRoad} className="text-yellow-500 mr-1" />
@@ -65,7 +62,6 @@ const MapComponent = ({ activeTab, formData, updateMap, mapRef }) => {
           </div>
         </div>
         
-        {/* Detailed information - collapsible on mobile */}
         <div className="bg-blue-50 p-3 rounded-lg border border-yellow-200 mt-2">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-2">
             <div className="bg-white p-2 rounded shadow-sm flex items-center">
@@ -99,7 +95,6 @@ const MapComponent = ({ activeTab, formData, updateMap, mapRef }) => {
             </div>
           </div>
           
-          {/* Location legend */}
           <div className="flex flex-wrap justify-between mt-2 text-xs">
             <div className="flex items-center mb-1">
               <div className="w-3 h-3 bg-yellow-500 rounded-full mr-1"></div>
@@ -121,7 +116,6 @@ const MapComponent = ({ activeTab, formData, updateMap, mapRef }) => {
         </div>
       </div>
       
-      {/* Always visible minimal info on mobile when collapsed */}
       {!isExpanded && (
         <div className="md:hidden flex justify-between mt-2 bg-blue-50 p-2 rounded-lg">
           <div className="flex items-center">

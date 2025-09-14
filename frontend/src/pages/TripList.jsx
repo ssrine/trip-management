@@ -9,7 +9,6 @@ export default function TripList() {
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    // Call backend to get all trips
     getTrips()
       .then((res) => {
         setTrips(res.data);
@@ -21,7 +20,6 @@ export default function TripList() {
       });
   }, []);
 
-  // Filter trips based on search
   const filteredTrips = trips.filter(trip => {
     return (
       (trip.pickup_location || '').toLowerCase().includes(searchTerm.toLowerCase()) ||

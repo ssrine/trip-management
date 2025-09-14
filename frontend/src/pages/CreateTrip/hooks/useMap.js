@@ -34,7 +34,6 @@ export const useMap = () => {
       const pickupCoords = formData.pickup_location ? await getCoordinates(formData.pickup_location) : null;
       const dropoffCoords = formData.dropoff_location ? await getCoordinates(formData.dropoff_location) : null;
 
-      // Clear existing markers and polylines
       if (mapRef.current) {
         mapRef.current.eachLayer((layer) => {
           if (layer instanceof L.Marker || layer instanceof L.Polyline) {
@@ -64,12 +63,10 @@ export const useMap = () => {
         locations.push(dropoffCoords);
       }
 
-      // Draw lines between locations if we have multiple points
       if (locations.length > 1) {
         L.polyline(locations, { color: "blue", weight: 4, opacity: 0.7 }).addTo(mapRef.current);
       }
 
-      // Adjust map view to show all markers
       if (markers.length > 0) {
         const group = new L.featureGroup(markers);
         mapRef.current.fitBounds(group.getBounds().pad(0.5));

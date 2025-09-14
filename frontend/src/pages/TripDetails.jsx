@@ -28,15 +28,13 @@ export default function TripDetails() {
   useEffect(() => {
     async function fetchTripData() {
       try {
-        // Get trip
         const tripRes = await getTripById(id);
         const tripData = tripRes.data;
 
-        // Fetch all logsheets for the trip
         const logsheetsWithEntries = await Promise.all(
           tripData.logsheets.map(async (log) => {
             const logRes = await getLogsheetById(log.id);
-            return logRes.data; // logsheet with entries
+            return logRes.data; 
           })
         );
 
@@ -66,7 +64,6 @@ export default function TripDetails() {
     }
   };
 
-  // Calculate totals
   const calculateTotals = () => {
     if (!trip || !trip.logsheets) return {};
     
@@ -115,7 +112,6 @@ export default function TripDetails() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-4 sm:py-8 px-3 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
-        {/* Mobile Header */}
         <div className="md:hidden bg-gradient-to-r from-blue-800 to-indigo-900 rounded-xl p-4 text-white mb-4 flex justify-between items-center">
           <button 
             onClick={() => window.history.back()} 
@@ -133,7 +129,6 @@ export default function TripDetails() {
           </button>
         </div>
 
-        {/* Mobile Menu Dropdown */}
         {mobileMenuOpen && (
           <div className="md:hidden bg-white rounded-lg shadow-lg p-3 absolute right-4 z-10 w-48">
             <button
@@ -146,7 +141,6 @@ export default function TripDetails() {
           </div>
         )}
 
-        {/* Header */}
         <div className="mb-6 md:mb-8">
           <button 
             onClick={() => window.history.back()} 
@@ -178,12 +172,10 @@ export default function TripDetails() {
               </button>
             </div>
             
-            {/* Gold accent bar */}
             <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-amber-400 to-amber-600"></div>
           </div>
         </div>
 
-        {/* Stats Overview */}
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5 mb-6 md:mb-8">
           <div className="bg-white rounded-lg md:rounded-xl shadow p-3 md:p-5 border border-gray-100">
             <div className="flex items-center justify-between mb-2 md:mb-3">
@@ -227,7 +219,6 @@ export default function TripDetails() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-8">
-          {/* Trip Information Card */}
           <div className="bg-white rounded-xl md:rounded-2xl shadow-lg p-4 md:p-6 border border-gray-100">
             <h3 className="font-semibold text-lg md:text-xl mb-4 text-gray-800 flex items-center pb-3 border-b border-gray-200">
               <div className="w-8 h-8 md:w-10 md:h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
@@ -280,7 +271,6 @@ export default function TripDetails() {
             </div>
           </div>
 
-          {/* Route Information Card */}
           <div className="bg-white rounded-xl md:rounded-2xl shadow-lg p-4 md:p-6 border border-gray-100">
             <h3 className="font-semibold text-lg md:text-xl mb-4 text-gray-800 flex items-center pb-3 border-b border-gray-200">
               <div className="w-8 h-8 md:w-10 md:h-10 bg-green-100 rounded-lg flex items-center justify-center mr-3">
@@ -322,7 +312,6 @@ export default function TripDetails() {
           </div>
         </div>
 
-        {/* Logsheets and Entries */}
         <div className="bg-white rounded-xl md:rounded-2xl shadow-lg p-4 md:p-6 border border-gray-100 mt-6 md:mt-8">
           <h3 className="font-semibold text-lg md:text-xl mb-4 md:mb-6 text-gray-800 flex items-center pb-3 border-b border-gray-200">
             <div className="w-8 h-8 md:w-10 md:h-10 bg-amber-100 rounded-lg flex items-center justify-center mr-3">
@@ -362,7 +351,6 @@ export default function TripDetails() {
                     </div>
                   </div>
 
-                  {/* Entries Table */}
                   {log.entries && log.entries.length > 0 ? (
                     <div className="overflow-x-auto rounded-lg border border-gray-200">
                       <table className="min-w-full divide-y divide-gray-200">
@@ -410,7 +398,6 @@ export default function TripDetails() {
           )}
         </div>
 
-        {/* Mobile Download Button */}
         <div className="md:hidden fixed bottom-4 right-4 z-10">
           <button
             onClick={handleDownloadPdf}

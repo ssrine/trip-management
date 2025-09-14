@@ -144,7 +144,6 @@ const CreateTrip = () => {
         backgroundAttachment: 'fixed'
       }}
     >
-      {/* Animated background elements */}
       <div className="fixed inset-0 pointer-events-none">
         {[...Array(5)].map((_, i) => (
           <div 
@@ -163,7 +162,6 @@ const CreateTrip = () => {
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
-        {/* Header Section */}
         <div className="bg-gradient-to-r from-blue-800 to-indigo-900 rounded-2xl shadow-2xl overflow-hidden mb-8 relative">
           <div className="absolute inset-0 bg-black/30"></div>
           <div className="relative z-10 p-6 md:p-8 text-center">
@@ -181,7 +179,6 @@ const CreateTrip = () => {
               Streamline your logistics operations with our comprehensive trip management system
             </p>
             
-            {/* Progress Indicators */}
             <div className="flex justify-center mt-6">
               {['trip', 'logsheets', 'entries', 'dashboard'].map((tab, index) => (
                 <div key={tab} className="flex items-center">
@@ -206,7 +203,6 @@ const CreateTrip = () => {
             </div>
           </div>
           
-          {/* Gold accent bar */}
           <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-amber-400 to-amber-600"></div>
         </div>
 
@@ -282,7 +278,6 @@ const CreateTrip = () => {
         </div>
       </div>
 
-      {/* Add custom animations to tailwind config */}
       <style>
         {`
           @keyframes float {

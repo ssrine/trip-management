@@ -16,19 +16,16 @@ export default function Layout({ children, role }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const location = useLocation();
 
-  // Close sidebar when route changes on mobile
   useEffect(() => {
     setIsSidebarOpen(false);
   }, [location]);
 
-  // Toggle sidebar for mobile
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
   return (
     <div className="flex flex-col md:flex-row h-screen bg-gray-50">
-      {/* Mobile Header */}
       <div className="bg-gradient-to-r from-blue-800 to-indigo-900 text-white p-4 flex justify-between items-center md:hidden shadow-lg">
         <div className="flex items-center">
           <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center mr-3 backdrop-blur-sm">
@@ -44,7 +41,6 @@ export default function Layout({ children, role }) {
         </button>
       </div>
 
-      {/* Sidebar Overlay for Mobile */}
       {isSidebarOpen && (
         <div 
           className="fixed inset-0 bg-black bg-opacity-50 z-20 md:hidden"
@@ -52,7 +48,6 @@ export default function Layout({ children, role }) {
         ></div>
       )}
 
-      {/* Sidebar */}
       <aside 
         className={`
           w-64 bg-gradient-to-b from-blue-800 to-indigo-900 text-white p-5 flex flex-col fixed md:relative 
@@ -61,7 +56,6 @@ export default function Layout({ children, role }) {
           shadow-xl border-r border-blue-700/50
         `}
       >
-        {/* Logo Section with Back Button */}
         <div className="flex items-center justify-between mb-10 pt-2">
           <div className="flex items-center">
             <Link 
@@ -83,7 +77,6 @@ export default function Layout({ children, role }) {
           </button>
         </div>
 
-        {/* User Role Badge */}
         <div className={`mb-8 px-4 py-3 rounded-xl flex items-center backdrop-blur-sm ${
           role === "manager" 
             ? "bg-gradient-to-r from-amber-500/20 to-amber-600/20 border border-amber-400/30" 
@@ -112,7 +105,6 @@ export default function Layout({ children, role }) {
           )}
         </div>
 
-        {/* Navigation */}
         <nav className="flex flex-col gap-2 flex-1">
           {role === "manager" && (
             <>
@@ -176,7 +168,6 @@ export default function Layout({ children, role }) {
           )}
         </nav>
 
-        {/* Footer Section */}
         <div className="pt-5 mt-auto border-t border-blue-700/50">
           <div className="text-center text-blue-200/70 text-xs">
             <p className="font-semibold">TruckLog v1.0</p>
@@ -185,7 +176,6 @@ export default function Layout({ children, role }) {
         </div>
       </aside>
 
-      {/* Main content */}
       <div className="flex-1 p-4 md:p-6 overflow-auto md:ml-0 bg-gray-50">
         {children}
       </div>

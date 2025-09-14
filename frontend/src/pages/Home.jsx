@@ -1,4 +1,3 @@
-// src/pages/Home.jsx
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaTruck, FaUserTie, FaChevronRight, FaMapMarkedAlt, FaChartLine, FaCogs, FaShieldAlt, FaCrown } from "react-icons/fa";
@@ -16,7 +15,6 @@ export default function Home() {
     setIsExiting(true);
     setRole(selectedRole);
     
-    // Small delay to allow animation to complete before navigation
     setTimeout(() => {
       if (selectedRole === "manager") {
         navigate("/manager"); 
@@ -43,7 +41,6 @@ export default function Home() {
         backgroundAttachment: 'fixed'
       }}
     >
-      {/* Animated background elements */}
       <div className="fixed top-0 left-0 w-full h-full pointer-events-none">
         {[...Array(8)].map((_, i) => (
           <div 
@@ -61,7 +58,6 @@ export default function Home() {
         ))}
       </div>
 
-      {/* Floating particles */}
       <div className="fixed top-0 left-0 w-full h-full pointer-events-none">
         {[...Array(30)].map((_, i) => (
           <div 
@@ -80,7 +76,6 @@ export default function Home() {
         ))}
       </div>
 
-      {/* Animated gold sparkles */}
       <div className="fixed top-0 left-0 w-full h-full pointer-events-none">
         {[...Array(10)].map((_, i) => (
           <div 
@@ -101,10 +96,8 @@ export default function Home() {
       </div>
 
       <div className={`w-full max-w-5xl bg-white rounded-2xl shadow-2xl p-6 text-center transform transition-all duration-500 ${isExiting ? 'scale-110 opacity-0' : 'scale-100 opacity-100'} relative z-10 border border-gray-200`}>
-        {/* Animated border effect */}
         <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-blue-500 to-blue-700 opacity-0 group-hover:opacity-100 transition duration-1000 blur-md animate-border-pulse"></div>
         
-        {/* Logo/Header Section */}
         <div className="mb-6 flex flex-col items-center relative">
           <div className="flex items-center justify-center mb-3">
             <div className="relative mr-3">
@@ -127,12 +120,10 @@ export default function Home() {
           </p>
         </div>
 
-        {/* Role Selection Section */}
         <div className="mb-8">
           <h2 className="text-xl font-semibold mb-4 text-gray-800 font-display">Access Your Professional Portal</h2>
           
           <div className="flex flex-col md:flex-row gap-4 justify-center">
-            {/* Manager Button */}
             <div 
               className={`flex-1 transition-all duration-300 ${hoveredRole === 'driver' ? 'opacity-80 scale-95' : 'opacity-100 scale-100'}`}
               onMouseEnter={() => setHoveredRole('manager')}
@@ -166,12 +157,10 @@ export default function Home() {
                   <FaChevronRight className="text-xs transform group-hover:translate-x-1 transition-transform" />
                 </div>
                 
-                {/* Hover effect line */}
                 <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-700"></div>
               </button>
             </div>
 
-            {/* Driver Button */}
             <div 
               className={`flex-1 transition-all duration-300 ${hoveredRole === 'manager' ? 'opacity-80 scale-95' : 'opacity-100 scale-100'}`}
               onMouseEnter={() => setHoveredRole('driver')}
@@ -205,14 +194,12 @@ export default function Home() {
                   <FaChevronRight className="text-xs transform group-hover:translate-x-1 transition-transform" />
                 </div>
                 
-                {/* Hover effect line */}
                 <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-700"></div>
               </button>
             </div>
           </div>
         </div>
 
-        {/* Features Grid */}
         <div className="mb-6">
           <h3 className="text-lg font-semibold mb-4 text-gray-800 font-display">Enterprise Capabilities</h3>
           
@@ -228,7 +215,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Optional role display */}
         {role && (
           <div className="mt-4 p-3 bg-blue-50 rounded-lg animate-pulse border border-blue-200">
             <p className="text-blue-700 text-xs font-medium">
@@ -238,17 +224,14 @@ export default function Home() {
         )}
       </div>
       
-      {/* Decorative elements */}
       <div className="absolute bottom-6 left-6 w-16 h-16 bg-blue-400 rounded-full opacity-20 animate-bounce-slow"></div>
       <div className="absolute top-10 right-6 w-12 h-12 bg-blue-300 rounded-full opacity-30 animate-pulse-slow"></div>
       <div className="absolute top-1/3 left-1/4 w-10 h-10 bg-blue-200 rounded-full opacity-40 animate-float"></div>
       
-      {/* Footer text */}
       <p className="text-xs text-white/90 absolute bottom-4 text-center px-4 backdrop-blur-sm bg-blue-900/70 py-1.5 rounded-full border border-blue-700/30">
         Premium logistics solutions • ISO 9001 certified • Trusted by industry leaders
       </p>
       
-      {/* Add custom animations to tailwind config */}
       <style>
         {`
           @keyframes float {
