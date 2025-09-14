@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>TruckLog - Professional Fleet Management & Logistics Solution</title>
+    <meta name="title" content="TruckLog - Professional Fleet Management & Logistics Solution">
+    <meta name="description" content="Streamline your logistics operations with TruckLog's comprehensive trip management system. Monitor fleets, track shipments, and optimize delivery routes.">
+    <meta name="keywords" content="truck management, logistics, fleet management, shipment tracking, delivery routes, trucking software">
+    <meta name="author" content="TruckLog Team">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://trucklog.example.com/">
+    <meta property="og:title" content="TruckLog - Professional Fleet Management & Logistics Solution">
+    <meta property="og:description" content="Streamline your logistics operations with TruckLog's comprehensive trip management system.">
+    <meta property="og:image" content="https://trucklog.example.com/images/og-image.jpg">
+    
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://trucklog.example.com/">
+    <meta property="twitter:title" content="TruckLog - Professional Fleet Management & Logistics Solution">
+    <meta property="twitter:description" content="Streamline your logistics operations with TruckLog's comprehensive trip management system.">
+    <meta property="twitter:image" content="https://trucklog.example.com/images/twitter-image.jpg">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#1e40af">
+    <meta name="msapplication-TileColor" content="#1e40af">
+    <meta name="theme-color" content="#1e40af">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "TruckLog",
+      "url": "https://trucklog.example.com",
+      "description": "Professional fleet management and logistics solution for trucking companies",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web Browser",
+      "permissions": "geolocation",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "TruckLog Team"
+      }
+    }
+    </script>
+    
+    <style>
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+          'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+          sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background-color: #f3f4f6;
+      }
+      
+      #root:empty::before {
+        content: '';
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 40px;
+        height: 40px;
+        border: 4px solid #e5e7eb;
+        border-top: 4px solid #1e40af;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      
+      @keyframes spin {
+        0% { transform: translate(-50%, -50%) rotate(0deg); }
+        100% { transform: translate(-50%, -50%) rotate(360deg); }
+      }
+    </style>
+  </head>
+  
+  <body class="bg-gray-100">
+    <noscript>
+      <div style="text-align: center; padding: 50px; font-family: sans-serif;">
+        <h1>JavaScript Required</h1>
+        <p>TruckLog requires JavaScript to function properly. Please enable JavaScript in your browser settings.</p>
+      </div>
+    </noscript>
+    
+    <div id="root"></div>
+    
+    <script type="module" src="/src/main.jsx" async></script>
+    
+    <script>
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
+          console.log('Page load time: ' + loadTime + 'ms');
+        }, 0);
+      });
+    </script>
+  </body>
+</html>

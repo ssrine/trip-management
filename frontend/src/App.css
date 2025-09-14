@@ -1,0 +1,31 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&family=Barlow+Condensed:wght@500;700&family=Inter:wght@300;400;500&display=swap');
+@import 'leaflet/dist/leaflet.css';
+
+
+
+
+
+
+
+
+@keyframes progress {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+.animate-progress {
+  animation: progress 2s ease-in-out infinite;
+}
+
+@keyframes truckMove {
+  0%, 100% { transform: translateX(0) rotate(0deg); }
+  25% { transform: translateX(5px) rotate(2deg); }
+  50% { transform: translateX(-5px) rotate(-2deg); }
+  75% { transform: translateX(3px) rotate(1deg); }
+}
+
+.animate-truck {
+  animation: truckMove 2s ease-in-out infinite;
+}
+
